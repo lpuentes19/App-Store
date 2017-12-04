@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppCategoryTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AppCategoryTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()

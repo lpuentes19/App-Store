@@ -11,6 +11,7 @@ import UIKit
 class AppCategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var appsCategoryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
