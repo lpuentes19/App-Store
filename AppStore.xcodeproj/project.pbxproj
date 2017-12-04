@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9526D48A1FD5EDAF00EF7099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526D4891FD5EDAF00EF7099 /* AppDelegate.swift */; };
-		9526D48C1FD5EDAF00EF7099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526D48B1FD5EDAF00EF7099 /* ViewController.swift */; };
 		9526D48F1FD5EDAF00EF7099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9526D48D1FD5EDAF00EF7099 /* Main.storyboard */; };
 		9526D4911FD5EDAF00EF7099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9526D4901FD5EDAF00EF7099 /* Assets.xcassets */; };
 		9526D4941FD5EDAF00EF7099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9526D4921FD5EDAF00EF7099 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		9526D4861FD5EDAF00EF7099 /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9526D4891FD5EDAF00EF7099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9526D48B1FD5EDAF00EF7099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9526D48E1FD5EDAF00EF7099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9526D4901FD5EDAF00EF7099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9526D4931FD5EDAF00EF7099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +52,21 @@
 		9526D4881FD5EDAF00EF7099 /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
-				9526D4891FD5EDAF00EF7099 /* AppDelegate.swift */,
-				9526D48B1FD5EDAF00EF7099 /* ViewController.swift */,
 				9526D48D1FD5EDAF00EF7099 /* Main.storyboard */,
+				9526D49B1FD5EE7000EF7099 /* Resources */,
+			);
+			path = AppStore;
+			sourceTree = "<group>";
+		};
+		9526D49B1FD5EE7000EF7099 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9526D4891FD5EDAF00EF7099 /* AppDelegate.swift */,
 				9526D4901FD5EDAF00EF7099 /* Assets.xcassets */,
 				9526D4921FD5EDAF00EF7099 /* LaunchScreen.storyboard */,
 				9526D4951FD5EDAF00EF7099 /* Info.plist */,
 			);
-			path = AppStore;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9526D48C1FD5EDAF00EF7099 /* ViewController.swift in Sources */,
 				9526D48A1FD5EDAF00EF7099 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9L7P6ZCN6;
-				INFOPLIST_FILE = AppStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +295,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9L7P6ZCN6;
-				INFOPLIST_FILE = AppStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AppStore/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
