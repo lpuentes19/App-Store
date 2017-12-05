@@ -10,6 +10,24 @@ import UIKit
 
 class AppCollectionViewCell: UICollectionViewCell {
     
+    var app: App? {
+        didSet {
+            if let title = app?.title {
+                titleLabel.text = title
+            }
+            categoryLabel.text = app?.category
+            
+            if let price = app?.price {
+                priceLabel.text = "$\(price)"
+            } else {
+                priceLabel.text = ""
+            }
+            if let imageName = app?.appImage {
+                appImageView.image = UIImage(named: imageName)
+            }
+        }
+    }
+    
     @IBOutlet weak var appImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!

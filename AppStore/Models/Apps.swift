@@ -13,6 +13,6 @@ class App {
     var id: Int?
     var title: String?
     var category: String?
-    var price: Int?
+    var price: Double?
     var appImage: String?
 }

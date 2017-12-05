@@ -93,9 +93,8 @@
                                             </cells>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best New Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-0D-Snx">
-                                            <rect key="frame" x="16" y="0.0" width="172" height="25"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="172" id="akx-Ux-mIU"/>
                                                 <constraint firstAttribute="height" constant="25" id="upQ-AE-3xc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -104,6 +103,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="mSB-0D-Snx" secondAttribute="trailing" constant="35" id="2d7-ca-irg"/>
                                         <constraint firstItem="mSB-0D-Snx" firstAttribute="top" secondItem="txj-cw-e1H" secondAttribute="top" id="3zK-6o-4FK"/>
                                         <constraint firstItem="fTJ-uH-RK6" firstAttribute="top" secondItem="mSB-0D-Snx" secondAttribute="bottom" id="T1I-h4-kMH"/>
                                         <constraint firstItem="fTJ-uH-RK6" firstAttribute="top" secondItem="txj-cw-e1H" secondAttribute="top" constant="25" id="UkM-pd-LZ4"/>
@@ -128,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVW-Ec-AjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506.39999999999998" y="189.3553223388306"/>
+            <point key="canvasLocation" x="505.5" y="188.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3EX-Oh-A9f">

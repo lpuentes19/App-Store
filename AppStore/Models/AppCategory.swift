@@ -6,10 +6,42 @@
 //  Copyright © 2017 LuisPuentes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppCategory {
     
     var name: String?
-    var app: [App]?
+    var apps: [App]?
+    
+    static func sampleAppCategories() -> [AppCategory] {
+        let bestNewAppsCategory = AppCategory()
+        bestNewAppsCategory.name = "Best New Apps"
+        
+        var bestNewApps = [App]()
+        
+        let instaApp = App()
+        instaApp.title = "Instagram"
+        instaApp.appImage = "insta"
+        instaApp.category = "Entertainment"
+        instaApp.price = 3.99
+        
+        bestNewApps.append(instaApp)
+        bestNewAppsCategory.apps = bestNewApps
+        
+        let bestNewGamesCategory = AppCategory()
+        bestNewGamesCategory.name = "Best New Games"
+        
+        var bestNewGameApps = [App]()
+        
+        let facebookApp = App()
+        facebookApp.title = "Facebook"
+        facebookApp.appImage = "facebook"
+        facebookApp.category = "Games"
+        facebookApp.price = 2.99
+        
+        bestNewGameApps.append(facebookApp)
+        bestNewGamesCategory.apps = bestNewGameApps
+        
+        return [bestNewAppsCategory, bestNewGamesCategory]
+    }
 }
