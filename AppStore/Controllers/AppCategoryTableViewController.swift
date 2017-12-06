@@ -15,7 +15,11 @@ class AppCategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appCategories = AppCategory.sampleAppCategories()
+        // appCategories = AppCategory.sampleAppCategories()
+        AppCategory.fetchFeaturedApps { (appCategories) in
+            self.appCategories = appCategories
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Table view data source
@@ -28,7 +32,7 @@ class AppCategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "appCategoryCell", for: indexPath) as! AppCategoryTableViewCell
         
         cell.appCategory = appCategories?[indexPath.row]
-        
+
         return cell
     }
     

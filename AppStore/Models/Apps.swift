@@ -11,8 +11,16 @@ import Foundation
 class App {
     
     var id: Int?
-    var title: String?
+    var name: String?
     var category: String?
     var price: Double?
-    var appImage: String?
+    var imageName: String?
+    
+//    init(dictionary: [String: Any]) {
+//        id = dictionary["Id"] as? Int
+//        name = dictionary["Name"] as? String
+//        category = dictionary["Category"] as? String
+//        price = dictionary["Price"] as? Double
+//        imageName = dictionary["ImageName"] as? String
+//    }
 }
