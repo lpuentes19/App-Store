@@ -16,11 +16,11 @@ class App {
     var price: Double?
     var imageName: String?
     
-//    init(dictionary: [String: Any]) {
-//        id = dictionary["Id"] as? Int
-//        name = dictionary["Name"] as? String
-//        category = dictionary["Category"] as? String
-//        price = dictionary["Price"] as? Double
-//        imageName = dictionary["ImageName"] as? String
-//    }
+    init(dictionary: [String: Any]) {
+        id = dictionary["Id"] as? Int
+        name = dictionary["Name"] as? String
+        category = dictionary["Category"] as? String
+        price = dictionary["Price"] as? Double
+        imageName = dictionary["ImageName"] as? String
+    }
 }

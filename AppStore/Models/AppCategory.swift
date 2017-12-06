@@ -14,39 +14,46 @@ class AppCategory {
     var apps = [App]()
     var type: String?
     
+    init(dictionary: [String: Any]) {
+        name = dictionary["name"] as? String
+        apps = dictionary["apps"] as! [App]
+        type = dictionary["type"] as? String
+    }
+    
     static func fetchFeaturedApps(completion: @escaping ([AppCategory]) -> Void) {
         guard let url = URL(string: "https://api.letsbuildthatapp.com/appstore/featured") else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) -> Void in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
                 return
             }
             
+            guard let data = data else { return }
+        
             do {
-                
-                let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
                 
                 var appCategories = [AppCategory]()
-                
-                for dict in json["categories"] as! [[String: Any]] {
-                    let appCategory = AppCategory()
-                    appCategory.name = dict["name"] as? String
-                    appCategory.apps = dict["apps"] as! [App]
-                    appCategory.type = dict["type"] as? String
-                    appCategories.append(appCategory)
 
-                }
+                for dict in json["categories"] as! [[String: Any]] {
+                    let appCategory = AppCategory(dictionary: dict)
+                    appCategories.append(appCategory)
                 
+                    if dict.index(forKey: "apps") != nil {
+                        
+                    }
+                }
                 print(appCategories)
                 DispatchQueue.main.async {
                     completion(appCategories)
                 }
+
             } catch {
                 print("Error in JSON Serialization")
             }
             }.resume()
-    }
+}
     
 //    static func sampleAppCategories() -> [AppCategory] {
 //        let bestNewAppsCategory = AppCategory()

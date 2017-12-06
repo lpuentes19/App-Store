@@ -41,7 +41,7 @@ class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appCell", for: indexPath) as! AppCollectionViewCell
         
-        cell.app = appCategory?.apps[indexPath.item]
+//        cell.app = appCategory?.apps[indexPath.item]
         
         return cell
     }
