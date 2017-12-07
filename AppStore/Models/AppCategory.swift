@@ -16,8 +16,10 @@ class AppCategory {
     
     init(dictionary: [String: Any]) {
         name = dictionary["name"] as? String
-        apps = dictionary["apps"] as! [App]
+        let app = dictionary["apps"] as! [[String: Any]]
         type = dictionary["type"] as? String
+        
+        apps = app.flatMap( {App(dictionary: $0) } )
     }
     
     static func fetchFeaturedApps(completion: @escaping ([AppCategory]) -> Void) {
@@ -39,11 +41,9 @@ class AppCategory {
                 for dict in json["categories"] as! [[String: Any]] {
                     let appCategory = AppCategory(dictionary: dict)
                     appCategories.append(appCategory)
-                
-                    if dict.index(forKey: "apps") != nil {
-                        
-                    }
+                    
                 }
+                
                 print(appCategories)
                 DispatchQueue.main.async {
                     completion(appCategories)
@@ -52,38 +52,6 @@ class AppCategory {
             } catch {
                 print("Error in JSON Serialization")
             }
-            }.resume()
-}
-    
-//    static func sampleAppCategories() -> [AppCategory] {
-//        let bestNewAppsCategory = AppCategory()
-//        bestNewAppsCategory.name = "Best New Apps"
-//
-//        var bestNewApps = [App]()
-//
-//        let instaApp = App()
-//        instaApp.name = "Instagram"
-//        instaApp.imageName = "insta"
-//        instaApp.category = "Entertainment"
-//        instaApp.price = 3.99
-//
-//        bestNewApps.append(instaApp)
-//        bestNewAppsCategory.apps = bestNewApps
-//
-//        let bestNewGamesCategory = AppCategory()
-//        bestNewGamesCategory.name = "Best New Games"
-//
-//        var bestNewGameApps = [App]()
-//
-//        let facebookApp = App()
-//        facebookApp.name = "Facebook"
-//        facebookApp.imageName = "facebook"
-//        facebookApp.category = "Games"
-//        facebookApp.price = 2.99
-//
-//        bestNewGameApps.append(facebookApp)
-//        bestNewGamesCategory.apps = bestNewGameApps
-//
-//        return [bestNewAppsCategory, bestNewGamesCategory]
-//    }
+        }.resume()
+    }
 }
