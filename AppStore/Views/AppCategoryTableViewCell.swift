@@ -43,6 +43,10 @@ class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         
         cell.app = appCategory?.apps[indexPath.item]
         
+        DispatchQueue.main.async {
+            cell.setupImage()
+        }
+        
         return cell
     }
 }

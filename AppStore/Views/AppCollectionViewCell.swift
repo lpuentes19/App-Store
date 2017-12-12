@@ -28,17 +28,11 @@ class AppCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
+    func setupImage() {
+        // App Image
         appImageView.layer.cornerRadius = 16
         appImageView.layer.masksToBounds = true
+        appImageView.frame = CGRect(x: 0, y: 0, width: 125, height: 98)
     }
     
     @IBOutlet weak var appImageView: UIImageView!
