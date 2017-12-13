@@ -15,12 +15,12 @@ class AppCollectionViewCell: UICollectionViewCell {
             if let title = app?.name {
                 titleLabel.text = title
             } else {
-                titleLabel.text = ""
+                titleLabel?.removeFromSuperview()
             }
             if let category = app?.category {
                 categoryLabel.text = category
             } else {
-                categoryLabel.text = ""
+                categoryLabel?.removeFromSuperview()
             }
             if let price = app?.price {
                 priceLabel.text = "$\(price)"

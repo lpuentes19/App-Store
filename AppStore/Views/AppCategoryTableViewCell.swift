@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     var appCategory: AppCategory? {
         didSet
         {
@@ -39,6 +39,7 @@ class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appCell", for: indexPath) as! AppCollectionViewCell
         
         cell.app = appCategory?.apps[indexPath.item]
@@ -46,7 +47,6 @@ class AppCategoryTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         DispatchQueue.main.async {
             cell.setupImage()
         }
-        
         return cell
     }
 }
