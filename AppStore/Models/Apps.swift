@@ -16,7 +16,7 @@ class App {
     var price: Double?
     var imageName: String?
     
-    init(dictionary: [String: Any]) {
+    init?(dictionary: [String: Any]) {
         id = dictionary["Id"] as? Int
         name = dictionary["Name"] as? String
         category = dictionary["Category"] as? String
